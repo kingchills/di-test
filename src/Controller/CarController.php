@@ -30,6 +30,8 @@ class CarController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        echo "CarController::new() - EntityManager ID: " .  spl_object_id($this->getDoctrine()->getManager()) . "<br />";
+
         $car = new Car();
         $form = $this->createForm(CarType::class, $car);
         $form->handleRequest($request);

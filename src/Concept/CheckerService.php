@@ -14,6 +14,7 @@ class CheckerService
 
     public function __construct(EntityManagerInterface $entityManager)
     {
+        echo "CheckerService::__construct() - EntityManager ID: " .  spl_object_id($entityManager) . "<br />";
         $this->entityManager = $entityManager;
     }
 
