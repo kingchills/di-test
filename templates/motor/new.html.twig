@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Motor{% endblock %}
+
+{% block body %}
+    <h1>Create new Motor</h1>
+
+    {{ include('motor/_form.html.twig') }}
+
+    <a href="{{ path('motor_index') }}">back to list</a>
+{% endblock %}

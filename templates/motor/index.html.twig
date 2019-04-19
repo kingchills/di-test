@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Motor index{% endblock %}
+
+{% block body %}
+    <h1>Motor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>HorsePower</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for motor in motors %}
+            <tr>
+                <td>{{ motor.id }}</td>
+                <td>{{ motor.name }}</td>
+                <td>{{ motor.horsePower }}</td>
+                <td>
+                    <a href="{{ path('motor_show', {'id': motor.id}) }}">show</a>
+                    <a href="{{ path('motor_edit', {'id': motor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('motor_new') }}">Create new</a>
+{% endblock %}
